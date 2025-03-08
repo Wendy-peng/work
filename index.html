@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADCD Design Platform</title>
+    <!-- Tailwind CSS CSS -->
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --border-color: #ccc;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--bg-color);
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .adccd-main {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .adccd-panels {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .component-box {
+            background-color: var(--bg-color);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        .component-header {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .component-name {
+            font-family: Arial, sans-serif;
+            color: var(--text-color);
+        }
+
+        .component-description {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .components-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            padding: 8px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .component-item {
+            background-color: white;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .component-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* 添加你的组件布局、组件列表和组件详情代码 */
+    </style>
+</head>
+<body>
+    <!-- 主画面 -->
+    <div class="container">
+        <!-- 情况一：使用 SVG 绘制图形 -->
+        <svg width="300" height="200" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" id="svgContainer">
+            <!-- 图形代码 -->
+        </svg>
+
+        <!-- 情况二：使用 HTML 表达组件布局 -->
+        <div class="adccd-main">
+            <!-- 展示框 1 -->
+            <div class="component-box" style="width: 200px; padding-top: 15px;">
+                <div class="component-header">主画面</div>
+                <ul class="components-list">
+                    <!-- 布局中的组件代码 -->
+                    <li>项目模块 A</li>
+                    <li>系统功能 B</li>
+                    <li>用户体验 C</li>
+                    <li>数据存储 D</li>
+                </ul>
+            </div>
+
+            <!-- 展示框 2 -->
+            <div class="component-box" style="width: 150px; padding-top: 10px;">
+                <div class="component-header">组件详情 A</div>
+                <ul class="components-list">
+                    <!-- 布局中的组件代码 -->
+                    <li>功能选项 1</li>
+                    <li>功能选项 2</li>
+                    <li>功能选项 3</li>
+                    <li>功能选项 4</li>
+                </ul>
+            </div>
+
+            <!-- 展示框 3 -->
+            <div class="component-box" style="width: 100px; padding-top: 5px;">
+                <div class="component-header">系统设置 B</div>
+                <ul class="components-list">
+                    <!-- 布局中的组件代码 -->
+                    <li>设备数量</li>
+                    <li>可选选项数量</li>
+                    <li>点击数字选择项目</li>
+                    <li>滑块颜色</li>
+                    <li>滑块大小</li>
+                </ul>
+            </div>
+
+            <!-- 展示框 4 -->
+            <div class="component-box" style="width: 80px; padding-top: 20px;">
+                <div class="component-header">配置设置 C</div>
+                <ul class="components-list">
+                    <!-- 布局中的组件代码 -->
+                    <li>项目ID</li>
+                    <li>开发人员</li>
+                    <li>编码风格</li>
+                    <li>测试用例</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 情况三：使用 JavaScript 实现交互操作 -->
+        <script>
+            // 滚动到下一个组件
+            document.querySelectorAll('.component-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    Object.assign(this.textContent, { 'value': this.textContent + 1 });
+                });
+            });
+
+            // 点击显示内容
+            document.querySelector('.component-item').addEventListener('click', function() {
+                const content = this.textContent;
+                console.log(content);
+            });
+        </script>
+    </div>
+
+</body>
